@@ -85,7 +85,7 @@
 
 - 包含用例
 
-    用例可能包含其他用例的功能来作为它正常处理的一部分。通常它假设，任何被包含的用例在基本程序运行时每一次都会被调用。下面例子：用例“卡的确认”<Card Identification> 在运行时，被用例“取钱”<Withdraw>当作一个子部分。
+    用例可能包含其他用例的功能来作为它正常处理的一部分。通常它假设，任何被包含的用例在基本程序运行时每一次都会被调用。下面例子：用例“卡的确认”\<Card Identification\> 在运行时，被用例“取钱”\<Withdraw\>当作一个子部分。
 
     ![](https://sparxsystems.cn/images/screenshots/uml2_tutorial/uc06.GIF)
 
@@ -93,9 +93,9 @@
 
 - 扩展用例
 
-    一个用例可以被用来扩展另一个用例的行为，通常使用在特别情况下。例如：假设在修改一个特别类型的客户订单之前，用户必须得到某种更高级别的许可，然后“获得许可”<Get Approval>用例将有选择的扩展常规的“修改订单”<Modify Order>用例。
+    一个用例可以被用来扩展另一个用例的行为，通常使用在特别情况下。例如：假设在修改一个特别类型的客户订单之前，用户必须得到某种更高级别的许可，然后“获得许可”\<Get Approval\>用例将有选择的扩展常规的“修改订单”\<Modify Order\>用例。
 
-    ![](https://sparxsystems.cn/images/screenshots/uml2_tutorial/uc03.GIF）
+    ![](https://sparxsystems.cn/images/screenshots/uml2_tutorial/uc03.GIF)
 
 - 扩展点
 
@@ -106,6 +106,7 @@
 - 系统边界
 
     它用来显示用例在系统内部，执行者在系统的外部。
+
     ![](https://sparxsystems.cn/images/screenshots/uml2_tutorial/uc08.GIF)
 
 ### 用例图的画法与步骤
@@ -124,10 +125,11 @@
 - 易于评估项目工作量，合理规划迭代周期，规划人力需要
 
 ## 建模练习题（用例模型）
-
-- 选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、定电影票、背单词APP等，分别绘制它们用例图。并满足以下要求：
+- 选择2个熟悉的类似业务的在线服务系统，订旅馆（携程）、订电影票（猫眼），绘制用例图。
+    ![](img/Ctrip.svg)
+    ![](img/Maoyan.svg)
     - 请使用用户的视角，描述用户目标或系统提供的服务
-    - 粒度达到子用例级别，并用 include 和 exclude 关联它们
+    - 粒度达到子用例级别，并用 include 和 extend 关联它们
     - 请用色彩标注出你认为创新（区别于竞争对手的）用例或子用例
     - 尽可能识别外部系统和服务
 - 然后，回答下列问题：
@@ -139,3 +141,5 @@
 
 ## 参考
 https://sparxsystems.cn/resources/uml2_tutorial/uml2_usecasediagram.html
+
+http://t617.cn/blog/2018/04/18/lesson3.html
