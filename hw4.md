@@ -9,7 +9,7 @@
 ### 用例和场景的关系？什么是主场景或 happy path？
 场景是参与者和系统之间的一系列特定的活动和交互，也称为用例实例，场景是使用系统的一个特定情节或用例的一条执行路径。
 
-主成功场景(或happy path)是典型的、无条件的、理想方式、无错误的成功场景。
+主成功场景(或happy path)是典型的、无条件的、理想方式、无错误的系统最基本的成功场景。
 
 ### 用例有哪些形式？
 - 摘要
@@ -29,7 +29,7 @@
 由于复杂业务的场景较多，无法完整考虑各步骤的前置条件和成功保证，同时业务模式和需求容易变化，用例的编写需要遵循简洁的原则，如果用例过于完整，粒度太小，用例之间的关系会变得非常复杂，难以修改，缺乏灵活性，也容易出错。
 
 ### 什么是用例图？
-用例图是指由参与者（Actor）、用例（Use Case），边界以及它们之间的关系构成的用于描述系统功能的视图，可以展示系统边界、位于边界之外的事物以及系统如何被使用。
+用例图是指由参与者（Actor）、用例（Use Case）、边界以及它们之间的关系构成的用于描述系统功能的视图，可以展示系统边界、位于边界之外的事物以及系统如何被使用。
 
 ### 用例图的基本符号与元素？
 - 执行者
@@ -126,20 +126,51 @@
 
 ## 建模练习题（用例模型）
 - 选择2个熟悉的类似业务的在线服务系统，订旅馆（携程）、订电影票（猫眼），绘制用例图。
-    ![](img/Ctrip.svg)
-    ![](img/Maoyan.svg)
-    - 请使用用户的视角，描述用户目标或系统提供的服务
+    - 请使用用户的视角，描述用户目标或系统提供的服务 
     - 粒度达到子用例级别，并用 include 和 extend 关联它们
     - 请用色彩标注出你认为创新（区别于竞争对手的）用例或子用例
     - 尽可能识别外部系统和服务
+
+    ![](img/Ctrip.svg)
+    
+    ![](img/Maoyan.svg)
+
 - 然后，回答下列问题：
     - 为什么相似系统的用例图是相似的？
+    
+        相似系统的参与者（Actor）、用例（Use Case）、边界以及它们之间的关系相似，所以它们构成的用例图也相似。
     - 如果是定旅馆业务，请对比 Asg_RH 用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术
+
+        不同时代、不同地区用户习惯、需求、法规、外部系统和服务不同，使业务和技术有差异，用例图就会存在差别，用色彩标注它们，就可以展现出创新之处。
     - 如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用
-    - 请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表
-    - 根据任务4，参考 使用用例点估算软件成本，给出项目用例点的估算
 
+        看创新点在用例图的位置，如果是属于用户级别的用例，在系统中的作用就非常重要，如果是属于子功能级别的包含用例，也比较重要，如果是子功能级别的扩展用例或是外部系统或服务，作用就比较一般。
+    - 请使用 SCRUM 方法，选择一个用例图，编制某订旅馆开发的需求（backlog）开发计划表
+
+        |ID|Name|Imp|Est|How to demo|
+        |-|-|-|-|-|
+        |1|find hotel by location|8|1|input the hotel name to determine hotel|
+        |2|find hotel on map|3|1|slide on map to determine hotel|
+        |3|make reservation|7|4|determine hotel, room type, time and then confirm|
+        |4|pay reservation|7|3|payment supported by third party system|
+        |5|modify reservation|5|2|modify reservation and hotel make approval|
+        |6|comment hotel|4|2|traveler rate and comment|
+    - 使用用例点估算软件成本
+
+        UAW =1×3(Complex)＝3
+
+        UUCW＝5×5(Simple)+1×10(Average)＝35
+
+        UUCP＝UAW+UUCW＝38
+
+        TCF=0.6+(0.01×15)=0.75
+
+        ECF=1.4+(-0.03×16.5)=0.905
+
+        UCP=TCF×ECF×UUCP=25.7925 (26)
+        
+        UCP发明人建议：每UCP为16人~30人，均值为20人时，对一个规模为26个UCP的项目，所需要的开发工作量为Effort=UCP×Productivity=26×20=520人时，为13人周。
 ## 参考
-https://sparxsystems.cn/resources/uml2_tutorial/uml2_usecasediagram.html
-
-http://t617.cn/blog/2018/04/18/lesson3.html
+https://sparxsystems.cn/resources/uml2_tutorial/uml2_usecasediagram.html  
+http://t617.cn/blog/2018/04/18/lesson3.html  
+www.ecice06.com/CN/article/downloadArticleFile.do?attachType=PDF&id=11259
